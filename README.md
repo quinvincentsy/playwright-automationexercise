@@ -12,8 +12,8 @@ Make sure you have installed:
 
 ## How to Clone
 
-- git clone https://github.com/quinvincentsy/playwright-framework.git
-- cd playwright-framework
+- git clone https://github.com/quinvincentsy/playwright-automationexercise.git
+- cd playwright-automationexercise
 
 ## Install Dependencies
 
