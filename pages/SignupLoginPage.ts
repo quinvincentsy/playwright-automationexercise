@@ -22,6 +22,9 @@ export class SignupLoginPage {
 
     async goto() {
         await this.page.goto('/login');
+
+        // Verify URL
+        await expect(this.page).toHaveURL('https://automationexercise.com/login');
     }
 
     async verifySignupHeaderText() {
@@ -41,6 +44,7 @@ export class SignupLoginPage {
         await expect(this.account_info_email).toHaveValue(email);
     }
     async enterAccountInfoThenCreateAccount() {
+
     }
 
 }
