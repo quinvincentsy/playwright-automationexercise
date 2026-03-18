@@ -11,12 +11,17 @@ test.describe('QVS: TC1 - Register User', () => {
         const email = `user${timestamp}@test.com`;
 
         await signuploginPage.goto();
+
+        // verify signup header is visible
         await signuploginPage.verifySignupHeaderText();
 
-        // Enter signup info and submit
+        // Enter name, email and click signup button
         await signuploginPage.enterNameAndEmail(name, email);
 
         // Verify account info page shows entered name and email
         await signuploginPage.verifyEnteredNameAndEmail(name, email);
+
+        // Fill out Registration Form
+        
     });
 });

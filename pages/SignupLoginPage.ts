@@ -28,7 +28,6 @@ export class SignupLoginPage {
     }
 
     async verifySignupHeaderText() {
-        // verify signup header is visible
         await expect(this.signup_header).toBeVisible();
     }
 
@@ -43,7 +42,7 @@ export class SignupLoginPage {
         await expect(this.account_info_name).toHaveValue(name);
         await expect(this.account_info_email).toHaveValue(email);
     }
-    async enterAccountInfoThenCreateAccount() {
+    async filloutRegistrationForm() {
 
     }
 
