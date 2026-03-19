@@ -23,7 +23,7 @@ function generateUser(): SignupData & { name: string; email: string } {
     };
 }
 
-test.describe('QVS: TC1 - Register User', () => {
+test.describe('TC1 - Register User', () => {
     test('Register User and Verify Account Info', async ({ page }) => {
         const homePage = new HomePage(page);
         const signupPage = new SignupPage(page);
