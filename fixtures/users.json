@@ -1,0 +1,12 @@
+{
+    "Signup": {
+        "password": "Pass123!",
+        "firstname": "Firstname",
+        "lastname": "Lastname",
+        "address1": "Test Address",
+        "state": "Test State",
+        "city": "Test City",
+        "zipcode": "6000",
+        "mobile": "09560000000"
+    }
+}
