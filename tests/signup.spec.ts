@@ -1,9 +1,8 @@
 import { test } from '@playwright/test';
 import { faker } from '@faker-js/faker';
 import { SignupPage, SignupData } from '../pages/SignupPage';
-import { HomePage } from '../pages/HomePage';
+import { HomePage } from '../pages/HomePage'
 
-// Helper to generate dynamic user data
 function generateUser(): SignupData & { name: string; email: string } {
     return {
         name: faker.person.firstName(),
@@ -19,31 +18,31 @@ function generateUser(): SignupData & { name: string; email: string } {
         dob_day: '1',
         dob_month: 'January',
         dob_year: '1990',
-        country: 'United States'
+        country: 'United States',
     };
 }
 
 test.describe('TC1 - Register User', () => {
-    test('Register User and Verify Account Info', async ({ page }) => {
+    test('Register user and verify account creation', async ({ page }) => {
         const homePage = new HomePage(page);
         const signupPage = new SignupPage(page);
         const user = generateUser();
 
-        await test.step('Navigate to Login', async () => {
+        await test.step('Navigate to login page', async () => {
             await homePage.goto();
-            await homePage.click_Login();
+            await homePage.clickLogin();
         });
 
-        await test.step('Fill Signup Form', async () => {
-            await signupPage.verifySignupHeaderText();
+        await test.step('Complete signup form', async () => {
+            await signupPage.verifySignupHeader();
             await signupPage.enterNameAndEmail(user.name, user.email);
             await signupPage.verifyEnteredNameAndEmail(user.name, user.email);
-            await signupPage.filloutRegistrationForm(user);
+            await signupPage.fillRegistrationForm(user);
         });
 
-        await test.step('Verify Account Creation', async () => {
-            await homePage.verify_account_created(user.name);
-            await homePage.deleteaccount();
+        await test.step('Verify account created and clean up', async () => {
+            await homePage.verifyAccountCreated(user.name);
+            await homePage.deleteAccountAndVerify();
         });
     });
 });
