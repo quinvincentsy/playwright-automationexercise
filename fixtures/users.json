@@ -5,14 +5,12 @@
     },
     "invalid": [
         {
-            "email": "",
-            "password": "Pass123!",
-            "reason": "missing email"
+            "email": "invalid@user.email",
+            "password": "Pass321!"
         },
         {
-            "email": "valid@user.email",
-            "password": "",
-            "reason": "missing password"
+            "email": "invalid2@user.email",
+            "password": "Pass321!"
         }
     ]
 }
