@@ -1,5 +1,6 @@
 {
     "valid": {
+        "name": "ValidUser",
         "email": "valid@user.email",
         "password": "Pass123!"
     },

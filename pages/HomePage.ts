@@ -31,9 +31,12 @@ export class HomePage {
         await expect(this.page).toHaveURL(/\/login/);
     }
 
-    async verifyAccountCreated(name: string) {
+    async verifyAccountCreated() {
         await expect(this.accountCreated).toBeVisible();
         await this.continueButton.click();
+    }
+
+    async verifyLoggedIn(name: string) {
         await expect(this.loggedInUser).toContainText(`Logged in as ${name}`);
     }
 

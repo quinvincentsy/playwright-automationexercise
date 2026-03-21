@@ -22,7 +22,7 @@ function generateUser(): SignupData & { name: string; email: string } {
     };
 }
 
-test.describe('TC1 - Register User', () => {
+test.describe('Signup Test', () => {
     test('Register user and verify account creation', async ({ page }) => {
         const homePage = new HomePage(page);
         const signupPage = new SignupPage(page);
@@ -41,7 +41,8 @@ test.describe('TC1 - Register User', () => {
         });
 
         await test.step('Verify account created and clean up', async () => {
-            await homePage.verifyAccountCreated(user.name);
+            await homePage.verifyAccountCreated();
+            await homePage.verifyLoggedIn(user.name);
             await homePage.deleteAccountAndVerify();
         });
     });
