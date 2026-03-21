@@ -1,7 +1,7 @@
 {
     "valid": {
-        "name": "ValidUser",
-        "email": "valid@user.email",
+        "name": "Quin",
+        "email": "quin@test.email",
         "password": "Pass123!"
     },
     "invalid": [
