@@ -1,25 +1,63 @@
 # Playwright Automation Exercise
 
-This is a Playwright automation framework using TypeScript.
+A Playwright automation framework using TypeScript, built with the Page Object Model pattern.
 
-## Preconditions
+## Prerequisites
 
-Make sure you have installed:
+Make sure you have the following installed before proceeding:
 
-- Node.js
-- Git
-- A code editor (VS Code recommended)
+- [Node.js](https://nodejs.org/) (v18 or later recommended)
+- [Git](https://git-scm.com/)
+- A code editor ([VS Code](https://code.visualstudio.com/) recommended)
 
-## How to Clone
+## Getting Started
 
-- git clone https://github.com/quinvincentsy/playwright-automationexercise.git
-- cd playwright-automationexercise
+### 1. Clone the Repository
 
-## Install Dependencies
+```bash
+git clone https://github.com/quinvincentsy/playwright-automationexercise.git
+cd playwright-automationexercise
+```
 
-- npm install
-- npx playwright install
+### 2. Install Dependencies
 
-## Run Test (UI)
+Install Node packages (includes Playwright, Faker, and other dependencies):
 
-- npm run test:ui
+```bash
+npm install
+```
+
+Install Playwright browsers:
+
+```bash
+npx playwright install
+```
+
+## Running Tests
+
+| Command | Description |
+|---|---|
+| `npm run test:ui` | Run tests in UI mode |
+| `npx playwright test` | Run all tests in headless mode |
+| `npx playwright test --headed` | Run all tests in headed mode |
+| `npx playwright show-report` | Open the last HTML test report |
+
+## Project Structure
+
+```
+├── fixtures/
+│   └── users.json          # Test data for login tests
+├── pages/
+│   ├── HomePage.ts
+│   ├── LoginPage.ts
+│   └── SignupPage.ts
+├── tests/
+│   ├── login.spec.ts
+│   └── signup.spec.ts
+└── playwright.config.ts
+```
+
+## Key Dependencies
+
+- [`@playwright/test`](https://playwright.dev/) — Test runner and browser automation
+- [`@faker-js/faker`](https://fakerjs.dev/) — Random test data generation for signup tests
