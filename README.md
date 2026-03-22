@@ -37,7 +37,7 @@ npx playwright install
 
 | Command | Description |
 |---|---|
-| `npm run test:ui` | Run tests in UI mode |
+| `npx playwright test --ui` | Open test runner |
 | `npx playwright test` | Run all tests in headless mode |
 | `npx playwright test --headed` | Run all tests in headed mode |
 | `npx playwright show-report` | Open the last HTML test report |
@@ -49,12 +49,14 @@ npx playwright install
 │   ├── userFixtures.ts    #user creation is via API
 │   ├── users.json         #test data
 ├── pages/
+│   ├── ContactUsPage.ts
 │   ├── HomePage.ts
 │   ├── LoginPage.ts
 │   └── SignupPage.ts
 ├── tests/
-│   ├── login.spec.ts
-│   └── signup.spec.ts
+│   ├── ContactUs.spec.ts
+│   ├── Login.spec.ts
+│   └── Signup.spec.ts
 └── playwright.config.ts
 ```
 
