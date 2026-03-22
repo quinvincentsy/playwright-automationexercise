@@ -9,6 +9,7 @@ export class HomePage {
     readonly loggedInUser: Locator;
     readonly deleteAccount: Locator;
     readonly deleteAccountHeader: Locator;
+    readonly contactUsHeader: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -19,6 +20,7 @@ export class HomePage {
         this.loggedInUser = page.locator('li:has-text("Logged in as")');
         this.deleteAccount = page.locator('a[href="/delete_account"]');
         this.deleteAccountHeader = page.locator('[data-qa="account-deleted"]');
+        this.contactUsHeader = page.locator('a[href="/contact_us"]');
     }
 
     async goto() {
@@ -29,6 +31,11 @@ export class HomePage {
     async clickLogin() {
         await this.signupLogin.click();
         await expect(this.page).toHaveURL(/\/login/);
+    }
+
+    async clickContactUs() {
+        await this.contactUsHeader.click();
+        await expect(this.page).toHaveURL(/\/contact_us/);
     }
 
     async verifyAccountCreated() {
