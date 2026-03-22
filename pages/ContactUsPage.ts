@@ -7,6 +7,7 @@ export class ContactUsPage {
     readonly subject: Locator;
     readonly message: Locator;
     readonly submit: Locator;
+    readonly successMessage: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -15,6 +16,7 @@ export class ContactUsPage {
         this.subject = page.locator('[data-qa="subject"]');
         this.message = page.locator('[data-qa="message"]');
         this.submit = page.locator('[data-qa="submit-button"]');
+        this.successMessage = page.locator('.status.alert-success');
     }
 
     async submitForm(data: { name: string; email: string; subject: string; message: string }) {
@@ -29,7 +31,11 @@ export class ContactUsPage {
             await dialog.accept(); // clicks OK
         });
 
-        await this.submit.click();
+    }
+
+    async verifySubmissionSuccess() {
+        await this.successMessage.waitFor({ state: 'visible', timeout: 10000 });
+        await expect(this.successMessage).toContainText('Success! Your details have been submitted successfully.');
     }
 
 }

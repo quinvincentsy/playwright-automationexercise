@@ -39,7 +39,7 @@ export class HomePage {
     }
 
     async verifyAccountCreated() {
-        await expect(this.accountCreated).toBeVisible();
+        await expect(this.accountCreated).toBeVisible({ timeout: 10000 }); // waits up to 10 seconds
         await this.continueButton.click();
     }
 

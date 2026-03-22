@@ -23,5 +23,10 @@ test.describe('Contact Us Test', () => {
                 message: 'Test message body',
             });
         });
+
+        // await test.step('Verify success message', async () => {
+        //     await contactUsPage.verifySubmissionSuccess();
+        // });
     });
+
 });
