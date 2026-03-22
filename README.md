@@ -46,7 +46,8 @@ npx playwright install
 
 ```
 ├── fixtures/
-│   └── users.json          # Test data for login tests
+│   ├── userFixtures.ts    #user creation is via API
+│   ├── users.json         #test data
 ├── pages/
 │   ├── HomePage.ts
 │   ├── LoginPage.ts
