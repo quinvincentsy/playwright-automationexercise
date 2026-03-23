@@ -11,8 +11,8 @@
                 "password": "Pass321!"
             },
             {
-                "email": "invalid2@user.email",
-                "password": "Pass321!"
+                "email": "invalid2@user",
+                "password": " "
             }
         ]
     },
