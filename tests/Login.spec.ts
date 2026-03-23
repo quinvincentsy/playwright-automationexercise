@@ -1,7 +1,7 @@
 import { test } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
 import { HomePage } from '../pages/HomePage';
-import users from '../fixtures/users.json';
+import testdata from '../fixtures/testdata.json';
 
 test.describe('Login Test', () => {
     let homePage: HomePage;
@@ -18,11 +18,11 @@ test.describe('Login Test', () => {
 
     test('Login with valid credentials', async () => {
         await test.step('Login with valid credentials', async () => {
-            await loginPage.login(users.valid.email, users.valid.password);
+            await loginPage.login(testdata.users.valid.email, testdata.users.valid.password);
         });
 
         await test.step('Verify user is logged in', async () => {
-            await homePage.verifyLoggedIn(users.valid.name);
+            await homePage.verifyLoggedIn(testdata.users.valid.name);
         });
 
         await test.step('Logout', async () => {
@@ -30,7 +30,7 @@ test.describe('Login Test', () => {
         });
     });
 
-    for (const invalidUser of users.invalid) {
+    for (const invalidUser of testdata.users.invalid) {
         test(`Login with invalid credentials (${invalidUser.email})`, async () => {
             await test.step('Attempt login with invalid credentials', async () => {
                 await loginPage.login(invalidUser.email, invalidUser.password);

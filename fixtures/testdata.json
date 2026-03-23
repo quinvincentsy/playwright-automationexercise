@@ -1,0 +1,23 @@
+{
+    "users": {
+        "valid": {
+            "name": "Quin",
+            "email": "quin@test.email",
+            "password": "Pass123!"
+        },
+        "invalid": [
+            {
+                "email": "invalid@user.email",
+                "password": "Pass321!"
+            },
+            {
+                "email": "invalid2@user.email",
+                "password": "Pass321!"
+            }
+        ]
+    },
+    "contactUs": {
+        "subject": "Test Subject",
+        "message": "This is a test message submitted via the contact form."
+    }
+}
