@@ -46,8 +46,8 @@ npx playwright install
 
 ```
 ├── fixtures/
-│   ├── userFixtures.ts    #user creation is via API
-│   ├── users.json         #test data
+│   ├── userFixtures.ts    #user creation via API
+│   └── testdata.json      #test data in json file
 ├── pages/
 │   ├── ContactUsPage.ts
 │   ├── HomePage.ts
