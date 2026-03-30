@@ -10,6 +10,7 @@ export class HomePage {
     readonly deleteAccount: Locator;
     readonly deleteAccountHeader: Locator;
     readonly contactUsHeader: Locator;
+    readonly productsHeader: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -21,6 +22,7 @@ export class HomePage {
         this.deleteAccount = page.locator('a[href="/delete_account"]');
         this.deleteAccountHeader = page.locator('[data-qa="account-deleted"]');
         this.contactUsHeader = page.locator('a[href="/contact_us"]');
+        this.productsHeader = page.locator('a[href="/products"]');
     }
 
     async goto() {
@@ -36,6 +38,11 @@ export class HomePage {
     async clickContactUs() {
         await this.contactUsHeader.click();
         await expect(this.page).toHaveURL(/\/contact_us/);
+    }
+
+    async clickProducts() {
+        await this.productsHeader.click();
+        await expect(this.page).toHaveURL(/\/products/);
     }
 
     async verifyAccountCreated() {
