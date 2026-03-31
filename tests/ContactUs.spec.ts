@@ -2,6 +2,7 @@ import { test } from '../fixtures/userFixtures';
 import { HomePage } from '../pages/HomePage';
 import { ContactUsPage } from '../pages/ContactUsPage';
 import testdata from '../fixtures/testdata.json';
+import path from 'path';
 
 test.describe('Contact Us Test', () => {
     test('Logged in user can submit contact form', async ({ userPage, userAccount }) => {
@@ -22,11 +23,12 @@ test.describe('Contact Us Test', () => {
                 email: userAccount.email,
                 subject: testdata.contactUs.subject,
                 message: testdata.contactUs.message,
+                filePath: path.resolve(__dirname, '../fixtures/contact-upload.txt'),
             });
         });
 
         await test.step('Verify successful submission', async () => {
             await contactUsPage.verifySubmissionSuccess();
-        })
+        });
     });
 });
