@@ -24,5 +24,9 @@ test.describe('Contact Us Test', () => {
                 message: testdata.contactUs.message,
             });
         });
+
+        await test.step('Verify successful submission', async () => {
+            await contactUsPage.verifySubmissionSuccess();
+        })
     });
 });
