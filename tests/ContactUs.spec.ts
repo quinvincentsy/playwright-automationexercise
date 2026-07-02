@@ -10,7 +10,7 @@ test.describe('Contact Us Test', () => {
         const contactUsPage = new ContactUsPage(userPage);
 
         await test.step('Verify user is logged in', async () => {
-            await homePage.verifyLoggedIn(userAccount.name);
+            await homePage.verifyLoggedInUser(userAccount.name);
         });
 
         await test.step('Navigate to Contact Us', async () => {

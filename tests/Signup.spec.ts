@@ -42,7 +42,7 @@ test.describe('Signup Test', () => {
 
         await test.step('Verify account created and clean up', async () => {
             await homePage.verifyAccountCreated();
-            await homePage.verifyLoggedIn(user.name);
+            await homePage.verifyLoggedInUser(user.name);
             await homePage.deleteAccountAndVerify();
         });
     });

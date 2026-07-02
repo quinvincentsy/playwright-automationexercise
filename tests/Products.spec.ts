@@ -9,7 +9,7 @@ test.describe('Product Tests', () => {
         const productsPage = new ProductsPage(userPage);
 
         await test.step('Verify user is logged in', async () => {
-            await homePage.verifyLoggedIn(userAccount.name);
+            await homePage.verifyLoggedInUser(userAccount.name);
         });
 
         await test.step('Navigate to Products Page', async () => {
