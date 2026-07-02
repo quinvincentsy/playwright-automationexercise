@@ -22,7 +22,7 @@ test.describe('Login Test', () => {
         });
 
         await test.step('Verify user is logged in', async () => {
-            await homePage.verifyLoggedIn(testdata.users.valid.name);
+            await homePage.verifyLoggedInUser(testdata.users.valid.name);
         });
 
         await test.step('Logout', async () => {

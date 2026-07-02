@@ -50,7 +50,7 @@ export class HomePage {
         await this.continueButton.click();
     }
 
-    async verifyLoggedIn(name: string) {
+    async verifyLoggedInUser(name: string) {
         await expect(this.loggedInUser).toContainText(`Logged in as ${name}`);
     }
 
